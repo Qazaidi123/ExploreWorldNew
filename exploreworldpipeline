@@ -1,1 +1,21 @@
+pipeline {
+  agent { label 'netligent' }
 
+  environment {
+    IMAGE_NAME= 'explorenew'
+    IMAGE_TAG= "${BUILD_NUMBER}"
+    CONTAINER_NAME= 'explorenewcon'
+}
+
+  stages {
+    stage(checkout) {
+      steps {
+        checkout scm
+    }
+  }
+    stage(Diploy via ansibleplugin) {
+      steps {  
+        ansiblePlaybook(
+          installation: 'ansible',
+          playbook: 'ansible/exploreworld.yaml',
+          inventory: 'ansible/hosts.ini',
