@@ -19,3 +19,4 @@ pipeline {
           installation: 'ansible',
           playbook: 'ansible/exploreworld.yaml',
           inventory: 'ansible/hosts.ini',
+          extras: """
