@@ -4,7 +4,7 @@
 
   tasks:
     - name: Build Docker image
-      community.community.community_image:
+      community.docker.docker_image:
         name: "{{ image_name }}"
         tag: "{{ image_tag }}"
         source: build
