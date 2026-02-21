@@ -9,8 +9,8 @@
         tag: "{{ image_tag }}"
         source: build
         build:
-          path: "{{ lookup('env','WORKSPACE') }}
-        fource_source: yes
+          path: "{{ lookup('env','WORKSPACE') }}"
+        force_source: yes
 
     - name: Stop old container
       community.docker.docker_container:
@@ -19,7 +19,7 @@
         ignore_errors: yes
 
     - name: Run new container
-      community.docker.docker_container
+      community.docker.docker_container:
         name: "{{ container_name }}"
         state: started
         image: "{{ image_name }}:{{ image_tag }}"
