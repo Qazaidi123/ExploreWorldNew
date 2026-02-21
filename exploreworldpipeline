@@ -8,12 +8,12 @@ pipeline {
 }
 
   stages {
-    stage(checkout) {
+    stage("checkout") {
       steps {
         checkout scm
     }
   }
-     stage(Diploy via ansible plugin) {
+     stage("Diploy via ansible plugin") {
       steps {  
         ansiblePlaybook(
           installation: 'ansible',
