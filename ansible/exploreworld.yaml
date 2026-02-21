@@ -16,7 +16,7 @@
       community.docker.docker_container:
         name: "{{ container_name }}"
         state: absent
-        ignore_errors: yes
+      ignore_errors: yes
 
     - name: Run new container
       community.docker.docker_container:
