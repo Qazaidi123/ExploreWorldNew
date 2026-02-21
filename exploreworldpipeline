@@ -13,7 +13,7 @@ pipeline {
         checkout scm
     }
   }
-     stage(Diploy via ansibleplugin) {
+     stage(Diploy via ansible plugin) {
       steps {  
         ansiblePlaybook(
           installation: 'ansible',
