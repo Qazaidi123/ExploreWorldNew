@@ -20,7 +20,7 @@ pipeline {
           playbook: 'ansible/exploreworld.yaml',
           inventory: 'ansible/hosts.ini',
           extras: """
-            --extra-vars "image_name:${IMAGE_NAME} image_tag:${IMAGE_TAG} container_name:${CONTAINER_NAME}"
+            --extra-vars "image_name=${IMAGE_NAME} image_tag=${IMAGE_TAG} container_name=${CONTAINER_NAME}"
             """
           )
         }
